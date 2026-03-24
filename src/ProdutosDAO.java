@@ -27,7 +27,7 @@ public class ProdutosDAO {
         String sql = "INSERT INTO produtos (nome, valor, status) VALUES (?, ?, ?)";
         
         try {
-            conn = new conectaDAO().connectDB(); // ✅ CORRIGIDO
+            conn = new conectaDAO().connectDB(); // 
             
             prep = conn.prepareStatement(sql);
             prep.setString(1, produto.getNome());
@@ -42,7 +42,7 @@ public class ProdutosDAO {
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar: " + e.getMessage());
         } finally {
             try {
-                if (conn != null) conn.close(); // 🔥 fecha conexão
+                if (conn != null) conn.close(); //
             } catch (Exception e) {}
         }
     }
@@ -54,7 +54,7 @@ public class ProdutosDAO {
         String sql = "SELECT * FROM produtos";
         
         try {
-            conn = new conectaDAO().connectDB(); // ✅ CORRIGIDO
+            conn = new conectaDAO().connectDB(); // 
             
             prep = conn.prepareStatement(sql);
             resultset = prep.executeQuery();
